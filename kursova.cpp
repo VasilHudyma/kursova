@@ -99,7 +99,7 @@ public:
 };
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// функція видалення гравця
+// ГґГіГ­ГЄГ¶ВіГї ГўГЁГ¤Г Г«ГҐГ­Г­Гї ГЈГ°Г 
 void Player::Delete_Player()
 {
 	Player player[size1];
@@ -108,11 +108,11 @@ void Player::Delete_Player()
 	string who, who1;
 	
 	
-	ifstream file1("basket.txt", ios_base::in);																				// зчитування
-	while (!file1.eof())																									//даних гравців  
+	ifstream file1("basket.txt", ios_base::in);																				// Г§Г·ГЁГІГіГўГ Г­Г­Гї
+	while (!file1.eof())																									//Г¤Г Г­ГЁГµ ГЈГ°Г ГўГ¶ВіГў  
 	{																														//
 		file1 >> player[i].name >> player[i].name1 >> player[i].nationality>> player[i].club_name >>player[i].age;			//
-		file1 >> player[i].position >> player[i].weight >> player[i].height >> player[i].price;								//із файлу
+		file1 >> player[i].position >> player[i].weight >> player[i].height >> player[i].price;								//ВіГ§ ГґГ Г©Г«Гі
 		i++;																												//
 	}																														//
 	file1.close();
@@ -125,7 +125,7 @@ void Player::Delete_Player()
 	MAX=i-1;
 	for(i=0;i<=max;i++)
 	{
-		if((who==player[i].name)&&(who1==player[i].name1)) { tmp=i; break;}      // пошук гравця якого потрібно видалити
+		if((who==player[i].name)&&(who1==player[i].name1)) { tmp=i; break;}      // ГЇГ®ГёГіГЄ ГЈГ°Г ГўГ¶Гї ГїГЄГ®ГЈГ® ГЇГ®ГІГ°ВіГЎГ­Г® ГўГЁГ¤Г Г«ГЁГІГЁ
 		if((who!=player[i].name)&&(who1!=player[i].name1))
 		{
 		k++;
@@ -141,7 +141,7 @@ void Player::Delete_Player()
 		
 		if(tmp==i)
 		{
-			cout<<"\nDeleted!\n"; break;                                                   // запис даних у файл без "видаленого" гравця
+			cout<<"\nDeleted!\n"; break;                                                   // Г§Г ГЇГЁГ± Г¤Г Г­ГЁГµ Гі ГґГ Г©Г« ГЎГҐГ§ "ГўГЁГ¤Г Г«ГҐГ­Г®ГЈГ®" ГЈГ°Г ГўГ¶Гї
 		}
 		else
 		{
@@ -155,7 +155,7 @@ void Player::Delete_Player()
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//редагування гравця
+//Г°ГҐГ¤Г ГЈГіГўГ Г­Г­Гї ГЈГ°Г ГўГ¶Гї
 void Player::Edit_Player()
 {
 	Player player[size1];
@@ -163,7 +163,7 @@ void Player::Edit_Player()
 	int i,  tmp;
 	string who, who1;
 	
-	//зчитування даних із файлу
+	//Г§Г·ГЁГІГіГўГ Г­Г­Гї Г¤Г Г­ГЁГµ ВіГ§ ГґГ Г©Г«Гі
 	ifstream file1("basket.txt", ios_base::in);
 	while (!file1.eof())
 	{
@@ -174,7 +174,7 @@ void Player::Edit_Player()
 	file1.close();
 	
 	
-	//пошук гравця в якого треба змінити дані
+	//ГЇГ®ГёГіГЄ ГЈГ°Г ГўГ¶Гї Гў ГїГЄГ®ГЈГ® ГІГ°ГҐГЎГ  Г§Г¬ВіГ­ГЁГІГЁ Г¤Г Г­Ві
 	M1:	cout<<"\nEnter name of player or press [1] [space] [1] to exit: "<<endl; cin>>who; cin>>who1;
 	if(who=="1") {return;}
 	int max=0, k=0, MAX;
@@ -190,7 +190,7 @@ void Player::Edit_Player()
 	}
 	if((k-1)==max){cout<<"\nThis player is not exist! Please try again!\n"; goto M1;}
 	
-	// вибір і редагування необхідного поля
+	// ГўГЁГЎВіГ° Ві Г°ГҐГ¤Г ГЈГіГўГ Г­Г­Гї Г­ГҐГ®ГЎГµВіГ¤Г­Г®ГЈГ® ГЇГ®Г«Гї
 	cout<<"\nWhat field you want change?\n";
 	cout<<"[1] Name;  [2] Surname;  [3] Nationality;  [4] Club;  [5] Age;  [6] Position;  [7] Weight;  [8] Height;  [9] Price;  [10] Exit\n ";
 	int c;	cin>>c;
@@ -222,7 +222,7 @@ M5:				  cout << "Enter new position: [1] Point guard (PG);  [2] Shooting guard 
 	}
 	
 	
-	//запис оновлених даних у файл
+	//Г§Г ГЇГЁГ± Г®Г­Г®ГўГ«ГҐГ­ГЁГµ Г¤Г Г­ГЁГµ Гі ГґГ Г©Г«
 	ofstream txt("basket.txt", ios::trunc);
 	txt.close();
 	ofstream fil("basket.txt", ios::app);
@@ -248,13 +248,13 @@ M5:				  cout << "Enter new position: [1] Point guard (PG);  [2] Shooting guard 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//функція що покузає виконані  трансфери
+//ГґГіГ­ГЄГ¶ВіГї Г№Г® ГЇГ®ГЄГіГ§Г Вє ГўГЁГЄГ®Г­Г Г­Ві  ГІГ°Г Г­Г±ГґГҐГ°ГЁ
 void Function::view_transfer()
 {
 	string who, who1, from, where, price, when_day, when_month, when_date, when_hour, when_year ;
 	ifstream file("transfer.txt", ios_base::in);
 	
-	//зчитування і виведення на екран даних із файлу
+	//Г§Г·ГЁГІГіГўГ Г­Г­Гї Ві ГўГЁГўГҐГ¤ГҐГ­Г­Гї Г­Г  ГҐГЄГ°Г Г­ Г¤Г Г­ГЁГµ ВіГ§ ГґГ Г©Г«Гі
 	cout<<'\n'<<lin_e1<<'\n'<<hedtr<<'\n'<<lin_e1<<'\n';
 	while(!file.eof())
 	{
@@ -271,7 +271,7 @@ void Function::view_transfer()
 }
  	
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//функція що виконує трансфер
+//ГґГіГ­ГЄГ¶ВіГї Г№Г® ГўГЁГЄГ®Г­ГіВє ГІГ°Г Г­Г±ГґГҐГ°
 void Function::Transfer()
 {
 	Player player[size1];
@@ -280,9 +280,9 @@ void Function::Transfer()
 	int i=0, j=0, tmp_player, tmp_club, MAX=0, MAX1=0, sum, sum1, SUM, SUM1, TMP; 
 	string who, who1,  where, from;
 	
-	function.Get_Data();  //виведення всіх гравців на екран
+	function.Get_Data();  //ГўГЁГўГҐГ¤ГҐГ­Г­Гї ГўГ±ВіГµ ГЈГ°Г ГўГ¶ВіГў Г­Г  ГҐГЄГ°Г Г­
 	
-	//зчитування даних із файлу
+	//Г§Г·ГЁГІГіГўГ Г­Г­Гї Г¤Г Г­ГЁГµ ВіГ§ ГґГ Г©Г«Гі
 	ifstream file1("basket.txt", ios_base::in);
 	while (!file1.eof())
 	{
@@ -292,7 +292,7 @@ void Function::Transfer()
 	}
 	file1.close();
 	
-	//введення імені гравця 
+	//ГўГўГҐГ¤ГҐГ­Г­Гї ВіГ¬ГҐГ­Ві ГЈГ°Г ГўГ¶Гї 
 M1:	cout<<"\nEnter name of player or press [1] [space] [1] to exit: "<<endl; cin>>who; cin>>who1;
 	if(who=="1") {return;}
 	int max=0, k=0;
@@ -300,7 +300,7 @@ M1:	cout<<"\nEnter name of player or press [1] [space] [1] to exit: "<<endl; cin
 	MAX=i-1;
 	for(i=0;i<=max;i++)
 	{
-		if((who==player[i].name)&&(who1==player[i].name1)) { tmp_player=i; break;}  //пошук гравця
+		if((who==player[i].name)&&(who1==player[i].name1)) { tmp_player=i; break;}  //ГЇГ®ГёГіГЄ ГЈГ°Г ГўГ¶Гї
 		if((who!=player[i].name)&&(who1!=player[i].name1))
 		{
 		k++;
@@ -308,7 +308,7 @@ M1:	cout<<"\nEnter name of player or press [1] [space] [1] to exit: "<<endl; cin
 	}
 	if((k-1)==max){cout<<"\nThis player is not exist! Please try again!\n"; goto M1;}
 	
-	//зчитування із файлу даних про клуби
+	//Г§Г·ГЁГІГіГўГ Г­Г­Гї ВіГ§ ГґГ Г©Г«Гі Г¤Г Г­ГЁГµ ГЇГ°Г® ГЄГ«ГіГЎГЁ
 	ifstream file2("basclub.txt", ios_base::in);
 		while(!file2.eof())
 	{
@@ -317,7 +317,7 @@ M1:	cout<<"\nEnter name of player or press [1] [space] [1] to exit: "<<endl; cin
 	}
 	file2.close();	
 
-	//пошук певного клубу
+	//ГЇГ®ГёГіГЄ ГЇГҐГўГ­Г®ГЈГ® ГЄГ«ГіГЎГі
 M2:	cout<<"\nEnter name of club or press [1] to exit: "<<endl; cin>>where;
 	if(where=="1") {return;}
 	max=0, k=0;
@@ -333,18 +333,18 @@ M2:	cout<<"\nEnter name of club or press [1] to exit: "<<endl; cin>>where;
 	}
 	if((k-1)==max){cout<<"\nThis club is not exist! Please try again!\n"; goto M2;}	
 	
-	//перевірка чи гравець вже знаходиться в цьому клубі
+	//ГЇГҐГ°ГҐГўВіГ°ГЄГ  Г·ГЁ ГЈГ°Г ГўГҐГ¶Гј ГўГ¦ГҐ Г§Г­Г ГµГ®Г¤ГЁГІГјГ±Гї Гў Г¶ГјГ®Г¬Гі ГЄГ«ГіГЎВі
 	if(where==player[tmp_player].club_name){cout<<"\nPlayer is in this club in this moment! Please enter another club!\n"; goto M2;}
 	
-	//перевірка чи в клубу достатньо коштів для здійснення трансферів 
+	//ГЇГҐГ°ГҐГўВіГ°ГЄГ  Г·ГЁ Гў ГЄГ«ГіГЎГі Г¤Г®Г±ГІГ ГІГ­ГјГ® ГЄГ®ГёГІВіГў Г¤Г«Гї Г§Г¤ВіГ©Г±Г­ГҐГ­Г­Гї ГІГ°Г Г­Г±ГґГҐГ°ВіГў 
 	if(club[tmp_club].club_budget<player[tmp_player].price) {cout<<"\nClub have not enough money!\n"; goto M1;}
 	
 	
-	//перетворення string y int
+	//ГЇГҐГ°ГҐГІГўГ®Г°ГҐГ­Г­Гї string y int
 	sum=atoi(club[tmp_club].club_budget.c_str());
 	sum1=atoi(player[tmp_player].price.c_str());
 	
-	sum-=sum1; //віднімання коштів з рахунку клубу куди переходить гравець
+	sum-=sum1; //ГўВіГ¤Г­ВіГ¬Г Г­Г­Гї ГЄГ®ГёГІВіГў Г§ Г°Г ГµГіГ­ГЄГі ГЄГ«ГіГЎГі ГЄГіГ¤ГЁ ГЇГҐГ°ГҐГµГ®Г¤ГЁГІГј ГЈГ°Г ГўГҐГ¶Гј
 	
 	for(j=0;j<=max;j++)
 	{
@@ -352,16 +352,16 @@ M2:	cout<<"\nEnter name of club or press [1] to exit: "<<endl; cin>>where;
 		{
 			SUM=atoi(club[j].club_budget.c_str());
 			SUM1=atoi(player[tmp_player].price.c_str());
-			SUM+=SUM1;          //додавання коштів до бюджету клубу звідки переходить гравець
+			SUM+=SUM1;          //Г¤Г®Г¤Г ГўГ Г­Г­Гї ГЄГ®ГёГІВіГў Г¤Г® ГЎГѕГ¤Г¦ГҐГІГі ГЄГ«ГіГЎГі Г§ГўВіГ¤ГЄГЁ ГЇГҐГ°ГҐГµГ®Г¤ГЁГІГј ГЈГ°Г ГўГҐГ¶Гј
 			TMP=j;
 		}
 	}
 	
 	from=player[tmp_player].club_name;
-	player[tmp_player].club_name=club[tmp_club].club_name;   //зміна клубу
+	player[tmp_player].club_name=club[tmp_club].club_name;   //Г§Г¬ВіГ­Г  ГЄГ«ГіГЎГі
 	
 	
-	//запис даних у файл
+	//Г§Г ГЇГЁГ± Г¤Г Г­ГЁГµ Гі ГґГ Г©Г«
 	ofstream txt("basket.txt", ios::trunc);
 	txt.close();
 	ofstream fil("basket.txt", ios::app);
@@ -383,7 +383,7 @@ M2:	cout<<"\nEnter name of club or press [1] to exit: "<<endl; cin>>where;
 	}
 	fil.close();
 	
-	//запис даних у файл
+	//Г§Г ГЇГЁГ± Г¤Г Г­ГЁГµ Гі ГґГ Г©Г«
 	ofstream basket("basclub.txt", ios::trunc);
 	basket.close();
 	ofstream bask("basclub.txt", ios::app);
@@ -407,14 +407,14 @@ M2:	cout<<"\nEnter name of club or press [1] to exit: "<<endl; cin>>where;
 	}
 	bask.close();
 	
-	//визначення дати і часу
+	//ГўГЁГ§Г­Г Г·ГҐГ­Г­Гї Г¤Г ГІГЁ Ві Г·Г Г±Гі
 	time_t rawtime;
 	struct tm * timeinfo;
 	time ( &rawtime );
 	timeinfo = localtime ( &rawtime );
 	string time= asctime(timeinfo);
 	
-	//запис даних про трансфер
+	//Г§Г ГЇГЁГ± Г¤Г Г­ГЁГµ ГЇГ°Г® ГІГ°Г Г­Г±ГґГҐГ°
 	ofstream transf("transfer.txt", ios::app);
 	for(i=0;i<1;i++)
 	{
@@ -429,7 +429,7 @@ M2:	cout<<"\nEnter name of club or press [1] to exit: "<<endl; cin>>where;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//меню користувача
+//Г¬ГҐГ­Гѕ ГЄГ®Г°ГЁГ±ГІГіГўГ Г·Г 
 void User::User_Menu()
 {
 	Player player;
@@ -444,7 +444,7 @@ M1:	cout << "\n\t\t\t\t\t\tUSER\n\n\n   Press [1] to view players; \n   Press [2
 	cin >> z;
 	cout << "\n";
 
-	if ((z>7)||(z<1)||(!cin)) { cin.clear(); cin.get(); system("cls"); cout << "   You entered incorect number!\n" << endl; goto M1; } //перевірка на коректність вибору
+	if ((z>7)||(z<1)||(!cin)) { cin.clear(); cin.get(); system("cls"); cout << "   You entered incorect number!\n" << endl; goto M1; } //ГЇГҐГ°ГҐГўВіГ°ГЄГ  Г­Г  ГЄГ®Г°ГҐГЄГІГ­ВіГ±ГІГј ГўГЁГЎГ®Г°Гі
 	switch (z)
 	{
 	case 1: player.Get_Data(); goto M1; break;
@@ -460,7 +460,7 @@ M1:	cout << "\n\t\t\t\t\t\tUSER\n\n\n   Press [1] to view players; \n   Press [2
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//меню адміна
+//Г¬ГҐГ­Гѕ Г Г¤Г¬ВіГ­Г 
 void Admin::Menu()
 {
 	Player player;
@@ -495,7 +495,7 @@ M1:	cout << "\n\t\t\t\t\t\tADMIN\n\n\n   Press [1] to add player; \n   Press [2]
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//меню авторизації
+//Г¬ГҐГ­Гѕ Г ГўГІГ®Г°ГЁГ§Г Г¶ВіВї
 void Admin::Authorization()
 {
 	User user;
@@ -509,7 +509,7 @@ M1:	cout<<"\n   If you are Admin press [1];\n   If you are User press [2];\n\n  
 	if((choice>3)||(choice<1)||(!cin)){cin.clear(); cin.get(); system("cls"); cout << "You entered incorect number!\n" << endl; goto M1;}
 	if(choice==1)
 	{
-		cout<<"   Please enter the password: "; cin>>pass; //перевірка паролю
+		cout<<"   Please enter the password: "; cin>>pass; //ГЇГҐГ°ГҐГўВіГ°ГЄГ  ГЇГ Г°Г®Г«Гѕ
 		if(pass==Admin::password)
 		{
 			Admin::Menu();
@@ -528,7 +528,7 @@ M1:	cout<<"\n   If you are Admin press [1];\n   If you are User press [2];\n\n  
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//додавання новго гравця
+//Г¤Г®Г¤Г ГўГ Г­Г­Гї Г­Г®ГўГЈГ® ГЈГ°Г ГўГ¶Гї
 void Player::Set_Data()
 {
 	system("cls");
@@ -537,7 +537,7 @@ void Player::Set_Data()
 
 	int i, MAX = 1, k;
 
-//додавання даних
+//Г¤Г®Г¤Г ГўГ Г­Г­Гї Г¤Г Г­ГЁГµ
 	for (i = 0; i < MAX; i++)
 	{
 		cout << '\n' << "New player:" << '\n' << endl;
@@ -572,7 +572,7 @@ M1:		cout << "Enter player's position: [1] Point guard (PG);  [2] Shooting guard
 		cout << '\n' << '\n' << endl;
 	}
 	
-	//запис даних у файл
+	//Г§Г ГЇГЁГ± Г¤Г Г­ГЁГµ Гі ГґГ Г©Г«
 	ofstream file1("basket.txt", ios::ate | ios::app);
 	for (i = 0; i<MAX; ++i)
 	{
@@ -587,7 +587,7 @@ M1:		cout << "Enter player's position: [1] Point guard (PG);  [2] Shooting guard
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-//вивід даних про гравців на екран
+//ГўГЁГўВіГ¤ Г¤Г Г­ГЁГµ ГЇГ°Г® ГЈГ°Г ГўГ¶ВіГў Г­Г  ГҐГЄГ°Г Г­
 void Player::Get_Data()
 {
 	Player player[size1];
@@ -616,7 +616,7 @@ void Player::Get_Data()
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//меню пошуку
+//Г¬ГҐГ­Гѕ ГЇГ®ГёГіГЄГі
 void Function::Search_Data()
 { 
 	system("cls");
@@ -625,7 +625,7 @@ void Function::Search_Data()
 	string X;
 	int z;
 M1:	cout<<"Please enter on which value you want to search: \n[1] Name\n[2] Surname\n[3] Nationality\n[4] Club\n[5]";
-	cout<<" Age\n[6] Position\n[7] Weight\n[8] Height\n[9] Price\n[10] Exit\n\n";   //введення значення по якому буде проводитись пошук
+	cout<<" Age\n[6] Position\n[7] Weight\n[8] Height\n[9] Price\n[10] Exit\n\n";   //ГўГўГҐГ¤ГҐГ­Г­Гї Г§Г­Г Г·ГҐГ­Г­Гї ГЇГ® ГїГЄГ®Г¬Гі ГЎГіГ¤ГҐ ГЇГ°Г®ГўГ®Г¤ГЁГІГЁГ±Гј ГЇГ®ГёГіГЄ
 	cin>>z;
 	if ((z < 1)||(z > 10)||(!cin)) 
 	{ cin.clear(); cin.get(); system("cls"); cout << "You entered incorect number!\n" << endl; goto M1; }
@@ -633,9 +633,9 @@ M1:	cout<<"Please enter on which value you want to search: \n[1] Name\n[2] Surna
 	{
 		case 1: {	cout<<"Enter name: "<<endl;
 					cin>>X;
-					function.Search_Player(player,&Player::name,X,1); //виклик функції пошуку перший аргумент це вказання структури, 
-																	//другий - за яким параметром проводиться пошук, третій - шукане значення,  
-					break;}											//четвертий: 1 - шукане значення буквене, 2 - циферне	
+					function.Search_Player(player,&Player::name,X,1); //ГўГЁГЄГ«ГЁГЄ ГґГіГ­ГЄГ¶ВіВї ГЇГ®ГёГіГЄГі ГЇГҐГ°ГёГЁГ© Г Г°ГЈГіГ¬ГҐГ­ГІ Г¶ГҐ ГўГЄГ Г§Г Г­Г­Гї Г±ГІГ°ГіГЄГІГіГ°ГЁ, 
+																	//Г¤Г°ГіГЈГЁГ© - Г§Г  ГїГЄГЁГ¬ ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬ ГЇГ°Г®ГўГ®Г¤ГЁГІГјГ±Гї ГЇГ®ГёГіГЄ, ГІГ°ГҐГІВіГ© - ГёГіГЄГ Г­ГҐ Г§Г­Г Г·ГҐГ­Г­Гї,  
+					break;}											//Г·ГҐГІГўГҐГ°ГІГЁГ©: 1 - ГёГіГЄГ Г­ГҐ Г§Г­Г Г·ГҐГ­Г­Гї ГЎГіГЄГўГҐГ­ГҐ, 2 - Г¶ГЁГґГҐГ°Г­ГҐ	
 		case 2: {	cout<<"Enter surname: "<<endl;
 					cin>>X;
 					function.Search_Player(player,&Player::name1,X,1);
@@ -672,17 +672,17 @@ M1:	cout<<"Please enter on which value you want to search: \n[1] Name\n[2] Surna
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//пошук
+//ГЇГ®ГёГіГЄ
 void Player::Search_Player(Player player[], string Player::*where, string what, int variant)
 {
 	int  i = 0, max, n=1, k=0;
 	ifstream file("basket.txt");
 	if (!file)
 	{
-		return;    //перревірка чи відкритий файл
+		return;    //ГЇГҐГ°Г°ГҐГўВіГ°ГЄГ  Г·ГЁ ГўВіГ¤ГЄГ°ГЁГІГЁГ© ГґГ Г©Г«
 	}
 	else
-		//зчитування даних із файлу
+		//Г§Г·ГЁГІГіГўГ Г­Г­Гї Г¤Г Г­ГЁГµ ВіГ§ ГґГ Г©Г«Гі
 		while (!file.eof())
 		{
 			file >>  player[i].name>>  player[i].name1>>  player[i].nationality >> player[i].club_name >>  player[i].age;
@@ -699,7 +699,7 @@ void Player::Search_Player(Player player[], string Player::*where, string what, 
 		for (i = 0; i<max; i++)
 			{
 		
-			if ( (player[i].*where) == what )  // порівнювання параметра із шуканим значенням
+			if ( (player[i].*where) == what )  // ГЇГ®Г°ВіГўГ­ГѕГўГ Г­Г­Гї ГЇГ Г°Г Г¬ГҐГІГ°Г  ВіГ§ ГёГіГЄГ Г­ГЁГ¬ Г§Г­Г Г·ГҐГ­Г­ГїГ¬
 				{
 				cout <<n<<". " << player[i].name<< " " <<  player[i].name1 << setw(6)<<'\t' << '|' << '\t' <<  player[i].nationality <<setw(7)<< '\t' << '|' << '\t';
 				cout<<  player[i].club_name << setw(8)<<'\t' << '|' << '\t' <<  player[i].age << '\t' << '|' << '\t' <<   player[i].position << '\t' << '|' << '\t';
@@ -721,7 +721,7 @@ void Player::Search_Player(Player player[], string Player::*where, string what, 
 			
 			{
 			 tmp=first_limit;
-			 first_limit=second_limit; //перестановка меж, в разі якщо перше значення більше другого
+			 first_limit=second_limit; //ГЇГҐГ°ГҐГ±ГІГ Г­Г®ГўГЄГ  Г¬ГҐГ¦, Гў Г°Г Г§Ві ГїГЄГ№Г® ГЇГҐГ°ГёГҐ Г§Г­Г Г·ГҐГ­Г­Гї ГЎВіГ«ГјГёГҐ Г¤Г°ГіГЈГ®ГЈГ®
 			 second_limit=tmp;
 		    }
 			
@@ -751,7 +751,7 @@ void Player::Search_Player(Player player[], string Player::*where, string what, 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//стирання всіх даних із файлу
+//Г±ГІГЁГ°Г Г­Г­Гї ГўГ±ВіГµ Г¤Г Г­ГЁГµ ВіГ§ ГґГ Г©Г«Гі
 void Function::Delete_All_Data_Player()
 {
 	cout << "\nAre you sure? y/n\n";
@@ -768,7 +768,7 @@ void Function::Delete_All_Data_Player()
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//стирання всіх даних із файлу
+//Г±ГІГЁГ°Г Г­Г­Гї ГўГ±ВіГµ Г¤Г Г­ГЁГµ ВіГ§ ГґГ Г©Г«Гі
 void Function::Delete_All_Data_Club()
 {
 	cout << "\nAre you sure? y/n\n";
@@ -785,7 +785,7 @@ void Function::Delete_All_Data_Club()
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//додавання клубу
+//Г¤Г®Г¤Г ГўГ Г­Г­Гї ГЄГ«ГіГЎГі
 void Club::Add_Club()
 {
 	system("cls");
@@ -843,7 +843,7 @@ M3:			cout<<"\nEnter club's division: [1] Atlantic;  [2] Central;  [3] Southeast
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//виведення списку клубів на екран
+//ГўГЁГўГҐГ¤ГҐГ­Г­Гї Г±ГЇГЁГ±ГЄГі ГЄГ«ГіГЎВіГў Г­Г  ГҐГЄГ°Г Г­
 void Club::Show_Club()
 {
 	Club club[size2];

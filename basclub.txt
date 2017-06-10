@@ -1,0 +1,7 @@
+
+Toronto_Raptors	Toronto	Eastern	Atlantic	71
+Chicago_Bulls	Chicago	Eastern	Central	98
+Miami_Heat	Miami	Eastern	Southeast	54
+Utah_Jazz	Salt_Lake	Western	Northwest	99
+L._A._Lakers	Los_Angeles	Western	Pacific	81
+S._A._Spurs	San_Antonio	Western	Southwest	72

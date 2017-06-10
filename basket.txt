@@ -1,0 +1,13 @@
+
+Bruno	Caboclo	Brazil	Toronto_Raptors	21	SF	100	206	6
+Cory	Joseph	USA	Toronto_Raptors	26	PG	86	191	4
+Anthony	Morrow	USA	Chicago_Bulls	31	SG	95	196	24
+Paul	Zipser	Germany	Chicago_Bulls	23	PF	95	203	15
+Chris	Bosh	USA	Miami_Heat	33	PF	107	211	17
+Josh	Richardson	USA	Miami_Heat	23	SG	91	198	20
+Alex	Len	Ukraine	Toronto_Raptors	23	C	118	218	25
+Rudy	Gobert	France	Utah_Jazz	24	C	111	216	23
+Luol	Deng	China	L._A._Lakers	32	PF	100	206	17
+Ivica	Zubac	Croatia	L._A._Lakers	20	C	109	216	26
+Kyle	Anderson	USA	S._A._Spurs	23	SF	104	206	16
+Tony	Parker	USA	S._A._Spurs	35	PG	84	188	13

@@ -8,8 +8,8 @@
 #include <iomanip>
 #include <string>
 #include <time.h>
-#define size1 13
-#define size2 7
+#define size1 13   //обмеження к-сті гравців
+#define size2 7    //обмеження к-сті клубів
 using namespace std;
 
 const char* lin_e1 = "_________________________________________________________________________________________________________";
